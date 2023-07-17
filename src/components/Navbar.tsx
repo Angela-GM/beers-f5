@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
+import homeIcon from '../assets/homeIcon.svg'
 
 const Navbar = () => {
   return (
-    <nav>
-      <Link to="/">Home Page</Link>      
+    <nav className="bg-info text-center p-3">
+      <Link to="/">
+         <img src={homeIcon} alt="Home icon" />
+        </Link>      
     </nav>
   );
 };

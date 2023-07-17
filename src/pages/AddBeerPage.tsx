@@ -27,22 +27,22 @@ export const AddBeerPage = () => {
     
   };
   
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    try {
-      const response: AxiosResponse = await axios.post( 'https://f5-beers-065cad3017be.herokuapp.com/beers/', newBeer);
-  
-      if (response.status === 200) {
-        console.log('Beer created successfully');
-      }
-  
-      
-      
-    } catch (error) {
-      console.error('Error creating beer:', error);
-      
-    }
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+  e.preventDefault();
+  try {
+    axios.post('https://f5-beers-065cad3017be.herokuapp.com/beers/', newBeer)
+      .then((response: AxiosResponse) => {
+        if (response.status === 200) {
+          console.log('Beer created successfully');
+        }
+      })
+      .catch((error) => {
+        console.error('Error creating beer:', error);
+      });
+  } catch (error) {
+    console.error('Error creating beer:', error);
   }
+};
   
   return (
     <>

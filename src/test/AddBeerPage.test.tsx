@@ -32,49 +32,49 @@ describe("Iteration 7", () => {
     });
 
     test("renders the 'name' input field", async () => {
-      const nameInput = screen.getByRole('input',{name:"name"});
+      const nameInput = screen.findByRole('input',{name:"name"});
       await waitFor(() => {
         expect(nameInput).not.toBeNull();
       });
     });
 
     test("renders the 'tagline' input field", async () => {
-      const taglineInput = screen.getByRole('input',{name:"tagline"});
+      const taglineInput = screen.findByRole('input',{name:"tagline"});
       await waitFor(() => {
         expect(taglineInput).not.toBeNull();
       });
     });
 
     test("renders the 'description' input field", async () => {
-      const descriptionInput = screen.getByRole('textarea',{name:"description"});
+      const descriptionInput = screen.findByRole('textarea',{name:"description"});
       await waitFor(() => {
         expect(descriptionInput).not.toBeNull();
       });
     });
 
     test("renders the 'first_brewed' input field", async () => {
-      const firstBrewedInput = screen.getByRole('input',{name:'first_brewed'});
+      const firstBrewedInput = screen.findByRole('input',{name:'first_brewed'});
       await waitFor(() => {
         expect(firstBrewedInput).not.toBeNull();
       });
     });
 
     test("renders the 'brewers_tips' input field", async () => {
-      const brewersTipsInput = screen.getByRole('input',{name:"brewers_tips"});
+      const brewersTipsInput = screen.findByRole('input',{name:"brewers_tips"});
       await waitFor(() => {
         expect(brewersTipsInput).not.toBeNull();
       });
     });
 
     test("renders the 'contributed_by' input field", async () => {
-      const contributedByInput = screen.getByRole('input',{name:"contributed_by"});
+      const contributedByInput = screen.findByRole('input',{name:"contributed_by"});
       await waitFor(() => {
         expect(contributedByInput).not.toBeNull();
       });
     });
 
     test("renders the 'attenuation_level' input field", async () => {
-      const attenuationInput = screen.getByRole('input',{name:"attenuation_level"});
+      const attenuationInput = screen.findByRole('input',{name:"attenuation_level"});
       await waitFor(() => {
         expect(attenuationInput).not.toBeNull();
       });

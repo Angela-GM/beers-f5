@@ -2,7 +2,7 @@ import {Beer} from '../pages/AllBeersPage'
 
 function CardDetaill({...beer}: Beer) {
   return (
-    <div>
+    <div className='card-detail'>
       <img src={beer.image_url} alt={beer.name} />
       <h2>{beer.name}</h2>
       <h3>{beer.tagline}</h3>

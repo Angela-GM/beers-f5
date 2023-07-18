@@ -3,7 +3,7 @@ import homeIcon from '../assets/homeIcon.svg'
 
 const Navbar = () => {
   return (
-    <nav className="bg-info text-center p-3">
+    <nav className="bg-primary text-center p-3">
       <Link to="/">
          <img src={homeIcon} alt="Home icon" />
         </Link>      

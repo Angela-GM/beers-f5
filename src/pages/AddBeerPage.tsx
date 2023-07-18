@@ -16,24 +16,15 @@ export const AddBeerPage = () => {
     contributed_by:""
   })
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setNewBeer((prevBeer) => ({
-      ...prevBeer,
-      [name]: value,
-    }));
 
-    console.log(newBeer);
-    
-  };
   
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
   e.preventDefault();
   try {
     axios.post('https://f5-beers-065cad3017be.herokuapp.com/beers/', newBeer)
       .then((response: AxiosResponse) => {
-        if (response.status === 200) {
-          console.log('Beer created successfully');
+        if (response.status === 201) {
+          console.log('Beer created successfully', newBeer);
         }
       })
       .catch((error) => {
@@ -43,23 +34,34 @@ export const AddBeerPage = () => {
     console.error('Error creating beer:', error);
   }
 };
+
+const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const { name, value } = e.target;
+  setNewBeer((prevBeer) => ({
+    ...prevBeer,
+    [name]: value,
+  }));
+
+  // console.log(newBeer);
+  
+};
   
   return (
     <>
       <Navbar />
-      <div>
+      <section className="add-beer-page">
         <h1>Add new beer</h1>
 
 
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="name">Name</label>
         <input type="text" name="name" value={newBeer.name} onChange={handleChange} />
         
         <label htmlFor="tagline">Tagline</label>
         <input type="text" name="tagline" value={newBeer.tagline} onChange={handleChange} />
 
         <label htmlFor="description">Description</label>
-        <textarea name="description" value={newBeer.description} onChange={handleChange}></textarea>
+        <textarea name="description" typeof="text" value={newBeer.description} onChange={handleChange}></textarea>
 
         <label htmlFor="first_brewed">First Brewed</label>
         <input type="text" name="first_brewed" value={newBeer.first_brewed} onChange={handleChange} />
@@ -73,11 +75,11 @@ export const AddBeerPage = () => {
         <label htmlFor="contributed_by">Contributed By</label>
         <input type="text" name="contributed_by" value={newBeer.contributed_by} onChange={handleChange} />
 
-        <button type="submit">Add Beer</button>
+        <button type="submit" className="btn btn-primary">Add Beer</button>
 
 
       </form>
-      </div>
+      </section>
     </>
   );
 };

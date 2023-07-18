@@ -18,40 +18,6 @@ a {
   color: inherit;
 }
 
-/* Loader  */
-#contenedor {
-  background-color: rgba(250, 240, 245, 0.9);
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  transition: all 1s ease;
-  z-index: 10000;
-}
-
-#pre-carga {
-  border: 15px solid #ccc;
-  border-top-color: #f4266a;
-  border-top-style: groove;
-  height: 100px;
-  width: 100px;
-  border-radius: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  animation: girar 1.5s linear infinite;
-}
-
-@keyframes girar {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 /* Hompage */
 .home-page {
@@ -90,5 +56,62 @@ a {
   & input, textarea {
     border: none;
     border-radius: 5px;
+    padding: 0.4rem;
+    font-size: 1rem;
+    &:focus {
+      background-color: #fad302;      
+    }
+  }
+}
+
+
+/* All beer page */
+.titulo-all-beers{
+  text-align: center;
+  /* font-size: 2rem; */
+  font-weight: 900;
+  margin: 1em 0;
+  & input {
+    border: none;
+    border-radius: 5px;
+    padding: 0.4rem;
+    font-size: 1rem;
+    &:focus {
+      background-color: #fad302;      
+    }
+
+  }
+}
+.card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #fad302;
+  border: none;
+  & div {
+    width: 300px;
+    min-height: 550px;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    & img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      border-radius: 5px;
+      margin-bottom: 2rem;
+    }
+    & h2 {
+      font-weight: 900;
+      margin: 1em 0;
+    }
+    & p {
+      margin-bottom: 1em;
+    }
+    
   }
 }

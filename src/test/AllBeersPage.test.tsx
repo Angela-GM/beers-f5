@@ -3,7 +3,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import nock, { Scope } from "nock";
 import axios from "axios";
-import {AllBeersPage} from "../pages/AllBeersPage";
+import { AllBeersPage } from "../pages/AllBeersPage";
 
 const API_URL = "https://f5-beers-065cad3017be.herokuapp.com";
 
@@ -28,7 +28,7 @@ describe("Iteration 4", () => {
       },
     ];
 
-    let scope:Scope;
+    let scope: Scope;
 
     nock(API_URL).get("/beers/").optionally().replyWithError({
       message: "\n\nInvalid endpoint: `/beers/`. Did you mean `/beers`?\n",

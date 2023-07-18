@@ -47,12 +47,13 @@ console.log(beers);
     <Navbar />
     {/* <CardDetaill _id={beer._id} image_url={beer.image_url} name={beer.name} tagline={beer.tagline} first_brewed={beer.first_brewed} attenuation_level={beer.attenuation_level} description={beer.description} contributed_by={beer.contributed_by} /> */}
     <div>
-      <img src={beer.image_url} alt={beer.name} />
-      <h1>{beer.name}</h1>
-      <h2>{beer.tagline}</h2>
-      <p>{beer.attenuation_level.toString()}</p>
-      <p>{beer.description}</p>
-      <p>{beer.contributed_by}</p>
+    <h1>{beer.name}</h1>
+      <img src={beer.image_url} alt={beer.name} />      
+      <h2>Tagline: {beer.tagline}</h2>
+      <p>First Brewed: {beer.first_brewed}</p>
+      <p>Attenuation Level: {beer.attenuation_level}</p>
+      <p>Description: {beer.description}</p>
+      <p>Contributed by: {beer.contributed_by}</p>
 
     </div>
     

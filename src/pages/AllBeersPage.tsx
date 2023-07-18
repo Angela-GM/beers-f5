@@ -49,27 +49,26 @@ export const AllBeersPage = () => {
   return (
     <>
       <Navbar />
-      <div>
+      <div className="titulo-all-beers">
         <h1>Todas las cervezas</h1>
-        <input
+        <input 
           type="text"
           value={searchQuery}
           onChange={handleSearchQuery}
           placeholder="Buscar cerveza..."
         />
         {isLoading ? (
-          <div id="contenedor">
-            <div id="pre-carga"></div>
-          </div>
+          <div>Loading...</div>
         ) : (
           <div className="card">
             {beers.map((beer) => (
               <div key={beer._id}>
-                {beer.name}
+                <h2> {beer.name}</h2>
+
                 <img src={beer.image_url} alt={beer.name} />
                 <p>{beer.tagline}</p>
                 <p>Created by: {beer.contributed_by}</p>
-                <Link to={`/beers/${beer._id}`}>Ver detalle</Link>
+                <Link className="btn btn-primary" to={`/beers/${beer._id}`}>Ver detalle</Link>
               </div>
             ))}
           </div>
